@@ -8,6 +8,7 @@ import STATUS from '../../status/status'
 import { useNavigate } from 'react-router-dom'
 
 const AddBlog = () => {
+ 
   const dispatch = useDispatch()
   const navigate= useNavigate()
   const {status} = useSelector((state)=>state.blog)
@@ -23,6 +24,8 @@ const AddBlog = () => {
    }
   },[status])
   
+
+ 
   return (
   <Layout>
 	<Form type='Create' onSubmit={handleAddBlog} />

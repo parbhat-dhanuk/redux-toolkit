@@ -34,7 +34,7 @@ const navigate=useNavigate()
 
 useEffect(()=>{
  if(status===STATUS.DELETED){
-    navigate("/")
+    navigate("/") 
     
  }
 },[status])

@@ -7,6 +7,7 @@ import Login from './pages/auth/Login'
 import AddBlog from './pages/blog/AddBlog'
 import EditBlog from './pages/blog/EditBlog'
 import SingleBlog from './pages/blog/SingleBlog'
+import Protected from './Protected'
 function App() {
   return (
     <BrowserRouter>
@@ -14,8 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
-        <Route path = '/blog/add' element={<AddBlog />} />
-        <Route path='/blog/edit/:id' element={<EditBlog />} />
+        <Route path = '/blog/add' element={<Protected><AddBlog /></Protected>} />
+        <Route path='/blog/edit/:id' element={<Protected><EditBlog /></Protected>} />
         <Route path='/blog/:id' element={<SingleBlog />} />
       </Routes>
     </BrowserRouter>

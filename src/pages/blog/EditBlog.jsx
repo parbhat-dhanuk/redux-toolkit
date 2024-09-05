@@ -26,11 +26,12 @@ const EditBlog = () => {
    }
   },[status])
 
+  
   return (
     
 
     <Layout>
-        <Form type='Edit' onSubmit={handleEdit} edata={data} />
+        <Form type='Edit' onSubmit={handleEdit}  />
     </Layout>
   )
 }
