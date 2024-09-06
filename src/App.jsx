@@ -10,6 +10,7 @@ import EditBlog from './pages/blog/EditBlog'
 import Protected from './Protected'
 import { lazy, Suspense } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
+import Parent from './useCallback/Parent'
 const SingleBlog =lazy(()=>import("./pages/blog/SingleBlog"))
 
 const ErrorFallback = ({error})=>{
@@ -33,6 +34,7 @@ function App() {
         <Route path = '/blog/add' element={<Protected><AddBlog /></Protected>} />
         <Route path='/blog/edit/:id' element={<Protected><EditBlog /></Protected>} />
         <Route path='/blog/:id' element={<SingleBlog />} />
+        <Route path='/usecallback' element={<Parent />} />
       </Routes>
 
      </Suspense>
