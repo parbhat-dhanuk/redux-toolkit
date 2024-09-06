@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Layout from '../../components/layout/Layout'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -40,7 +40,8 @@ useEffect(()=>{
 },[status])
 
   return (
-    <Layout>
+   <Suspense>
+     <Layout>
 
 <div className="bg-gray-100 dark:bg-gray-800 py-8 h-screen">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,6 +86,7 @@ useEffect(()=>{
 </div>
 
     </Layout>
+   </Suspense>
   )
 }
 

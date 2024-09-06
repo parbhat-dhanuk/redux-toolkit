@@ -6,12 +6,12 @@ import { blogFetch, setStatus } from '../../../STORE/blogSlice'
 import STATUS from '../../status/status'
 
 const Home = () => {
-
+  // throw new Error('Error in page')
   const [blogs,setBlogs]=useState([])
 
    const dispatch = useDispatch()
    const {status,data} = useSelector((state)=>state.blog)
-
+  
 useEffect(()=>{
  dispatch(blogFetch())
 },[])
@@ -39,9 +39,6 @@ useEffect(()=>{
          
         )
        }
-    
-   
-   
 
   </div>
    </Layout>
