@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../navbar/Navbar'
 
-const Layout = ({children}) => {
+const Layout = ({children,setQuery}) => {
+
+  
   return (
    <>
-   <Navbar /> 
+   <Navbar setQuery={setQuery} /> 
    {children}
    
    </>

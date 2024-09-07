@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { setStatus } from '../../../STORE/blogSlice'
 
-const Navbar = () => {
+const Navbar = ({setQuery}) => {
 
+  
 
   const navigate= useNavigate()
   const dispatch=useDispatch()
@@ -26,6 +27,9 @@ const handleLogout = ()=>{
 
 }
 
+const handleSearch = (e)=>{
+   setQuery(e.target.value.toLowerCase())
+}
 
   return (
 <nav className="bg-gray-400 border-gray-200 dark:bg-gray-900">
@@ -89,7 +93,7 @@ const handleLogout = ()=>{
         </svg>
         <span className="sr-only">Search icon</span>
       </div>
-      <input type="text" id="search-navbar" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
+      <input onChange={handleSearch} type="text" id="search-navbar" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
     </div>
     
     </div>

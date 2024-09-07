@@ -9,9 +9,23 @@ const Home = () => {
   // throw new Error('Error in page')
   const [blogs,setBlogs]=useState([])
 
-   const dispatch = useDispatch()
+   const dispatch = useDispatch('')       
    const {status,data} = useSelector((state)=>state.blog)
   
+
+
+
+
+//Search feature
+
+const [query,setQuery] = useState('')
+
+
+
+
+
+
+
 useEffect(()=>{
  dispatch(blogFetch())
 },[])
@@ -25,23 +39,26 @@ useEffect(()=>{
 
 
   return (
-   <Layout>
+
+   
+    
+   <Layout setQuery={setQuery} >
+    
+   
   <div className='flex flex-wrap justify-center space-x-5 mt-6'>
    
    
        {
-        blogs.length>0 &&(
-         
-          blogs.map((blog)=>{
-            return  <Card  bdata={blog} />
+       
+       blogs.filter((blog)=>blog.title.includes(query)).map((blog)=>{
+            return  <Card bdata={blog}  />
           })
            
-         
-        )
        }
 
   </div>
    </Layout>
+ 
   )
 }
 
